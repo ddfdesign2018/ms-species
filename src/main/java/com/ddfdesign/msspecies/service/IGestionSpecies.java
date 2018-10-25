@@ -9,5 +9,5 @@ public interface IGestionSpecies {
     SpecyDTO getSpecyById(Long idSpecy);
     SpecyDTO createSpecyById(SpecyDTO specyDTO);
     boolean deleteSpecyById(Long idSpecy);
-    boolean updateSpecyById(SpecyDTO animalDTO);
+    boolean updateSpecyById(SpecyDTO specyDTO);
 }

@@ -15,7 +15,7 @@ public class SpecyResource {
     IGestionSpecies gestionSpecies;
 
     @RequestMapping(value = "specy", method = RequestMethod.GET)
-    public ResponseEntity<List<SpecyDTO>> getAllAnimals() {
+    public ResponseEntity<List<SpecyDTO>> getAllSpecies() {
         List<SpecyDTO> listaSpecies = gestionSpecies.getAllSpecies();
         return ResponseEntity.ok(listaSpecies);
     }
@@ -47,4 +47,16 @@ public class SpecyResource {
         boolean resultado = gestionSpecies.updateSpecyById(specyDTO);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @RequestMapping(value = "saludo", method = RequestMethod.GET)
+    public String saludo() {
+        return "Saludo desde Species";
+    }
+
+    @RequestMapping(value = "specyList", method = RequestMethod.GET)
+    public List<SpecyDTO> getAllSpeciesList() {
+        List<SpecyDTO> listaSpecies = gestionSpecies.getAllSpecies();
+        return listaSpecies;
+    }
+
 }
